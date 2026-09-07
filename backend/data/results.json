@@ -836,5 +836,405 @@
         "saving_per_hour": 0.0
       }
     ]
+  },
+  {
+    "timestamp": "2026-08-13 11:09:00",
+    "total_instances": 6,
+    "idle_count": 0,
+    "active_count": 6,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-16c2abc6f40a1b8ec",
+        "cpu": 17.4,
+        "network": 60.3,
+        "disk": 37.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-9b1975b00782b0fb7",
+        "cpu": 50.1,
+        "network": 22.4,
+        "disk": 19.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-fe297343c8dcf96b5",
+        "cpu": 72.3,
+        "network": 24.0,
+        "disk": 13.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-ae4ec44dd6d406c64",
+        "cpu": 16.9,
+        "network": 54.3,
+        "disk": 58.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-a0501362f919c125f",
+        "cpu": 46.1,
+        "network": 13.8,
+        "disk": 10.8,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-f5e9149bab4c0c452",
+        "cpu": 80.3,
+        "network": 43.5,
+        "disk": 45.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-08-13 11:13:55",
+    "total_instances": 4,
+    "idle_count": 1,
+    "active_count": 3,
+    "hourly_saving": 0.0104,
+    "instances": [
+      {
+        "instance_id": "i-4ced5967c81a8fa21",
+        "cpu": 77.5,
+        "network": 45.5,
+        "disk": 11.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-8cabd8abc3e78323f",
+        "cpu": 49.4,
+        "network": 38.8,
+        "disk": 14.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-4e47941b3334f527b",
+        "cpu": 7.8,
+        "network": 1.5,
+        "disk": 1.3,
+        "status": "IDLE",
+        "saving_per_hour": 0.0104
+      },
+      {
+        "instance_id": "i-e23307bffb8eb4d8c",
+        "cpu": 12.7,
+        "network": 14.3,
+        "disk": 7.8,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-08-31 13:37:48",
+    "total_instances": 5,
+    "idle_count": 0,
+    "active_count": 5,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-43a0d47231306e947",
+        "cpu": 11.6,
+        "network": 28.2,
+        "disk": 24.5,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-8f24ca823f1d5956e",
+        "cpu": 22.4,
+        "network": 13.1,
+        "disk": 33.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-fc1dfb2e6606ad9bc",
+        "cpu": 85.1,
+        "network": 58.9,
+        "disk": 54.6,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-07626275ffb4a2f82",
+        "cpu": 86.7,
+        "network": 22.2,
+        "disk": 48.1,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-f4cbc40598c8f9fef",
+        "cpu": 88.5,
+        "network": 79.3,
+        "disk": 58.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-08-31 13:42:42",
+    "total_instances": 5,
+    "idle_count": 1,
+    "active_count": 4,
+    "hourly_saving": 0.0104,
+    "instances": [
+      {
+        "instance_id": "i-10790e7b6524b3eef",
+        "cpu": 62.1,
+        "network": 23.4,
+        "disk": 5.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-79d736ed6e594fe5e",
+        "cpu": 0.5,
+        "network": 0.7,
+        "disk": 3.4,
+        "status": "IDLE",
+        "saving_per_hour": 0.0104
+      },
+      {
+        "instance_id": "i-c340380888c2941fe",
+        "cpu": 51.8,
+        "network": 29.0,
+        "disk": 45.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-92288f63f37e03760",
+        "cpu": 83.0,
+        "network": 43.2,
+        "disk": 59.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-645d6c53ae87922a7",
+        "cpu": 89.3,
+        "network": 5.1,
+        "disk": 11.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-08-31 13:47:43",
+    "total_instances": 4,
+    "idle_count": 0,
+    "active_count": 4,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-2ef3f06b2e73965a6",
+        "cpu": 56.8,
+        "network": 54.4,
+        "disk": 59.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-d704c9c8dca3821eb",
+        "cpu": 86.8,
+        "network": 20.2,
+        "disk": 14.6,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-7e3f0495a5ad966a7",
+        "cpu": 40.9,
+        "network": 65.7,
+        "disk": 43.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-a46848ce1ec9ade77",
+        "cpu": 39.3,
+        "network": 22.2,
+        "disk": 19.5,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-09-01 13:59:53",
+    "total_instances": 7,
+    "idle_count": 0,
+    "active_count": 7,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-f95969bfc676b0cfb",
+        "cpu": 62.8,
+        "network": 6.9,
+        "disk": 52.2,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-e8f035b787719811e",
+        "cpu": 66.5,
+        "network": 29.4,
+        "disk": 6.0,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-b763ba3d270f8da9f",
+        "cpu": 87.8,
+        "network": 80.0,
+        "disk": 6.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-96270a7bd2f47c1da",
+        "cpu": 93.6,
+        "network": 22.3,
+        "disk": 11.3,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-cfc1c86c14d45ed6d",
+        "cpu": 73.7,
+        "network": 43.8,
+        "disk": 33.5,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-f6ec93b6762cea49b",
+        "cpu": 40.9,
+        "network": 30.8,
+        "disk": 29.5,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-613096da13a13316f",
+        "cpu": 77.6,
+        "network": 55.9,
+        "disk": 45.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-09-01 14:09:47",
+    "total_instances": 3,
+    "idle_count": 0,
+    "active_count": 3,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-535df78d00fcc5234",
+        "cpu": 78.3,
+        "network": 14.2,
+        "disk": 6.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-2c3fa684f7667d847",
+        "cpu": 23.2,
+        "network": 23.1,
+        "disk": 6.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-a601e5ab7d118dabb",
+        "cpu": 39.0,
+        "network": 73.3,
+        "disk": 59.1,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-09-01 14:14:48",
+    "total_instances": 7,
+    "idle_count": 0,
+    "active_count": 7,
+    "hourly_saving": 0.0,
+    "instances": [
+      {
+        "instance_id": "i-381d7aa4ed20cafcb",
+        "cpu": 87.5,
+        "network": 12.1,
+        "disk": 31.4,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-3392730a16f2e19f3",
+        "cpu": 49.6,
+        "network": 45.1,
+        "disk": 30.7,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-97bd32a2eda326a13",
+        "cpu": 67.7,
+        "network": 31.2,
+        "disk": 54.1,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-9ee90d2b6700dc902",
+        "cpu": 15.0,
+        "network": 55.7,
+        "disk": 45.9,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-d87a1ad3d8019b2dd",
+        "cpu": 78.9,
+        "network": 29.4,
+        "disk": 49.6,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-8aaf92129e81d2f1a",
+        "cpu": 65.2,
+        "network": 57.5,
+        "disk": 29.0,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      },
+      {
+        "instance_id": "i-32db2f1d5cf01fa2a",
+        "cpu": 37.1,
+        "network": 63.8,
+        "disk": 30.6,
+        "status": "ACTIVE",
+        "saving_per_hour": 0.0
+      }
+    ]
   }
 ]

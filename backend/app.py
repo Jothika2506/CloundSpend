@@ -5,44 +5,41 @@ import os
 import sys
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
+from pymongo import MongoClient
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-RESULTS_FILE = os.path.join(BASE_DIR, "data", "results.json")
 SCRIPTS_DIR = os.path.join(BASE_DIR, "scripts")
 sys.path.insert(0, SCRIPTS_DIR)
 
 from policy_engine import run_policy_engine
 
-def load_results():
-    if os.path.exists(RESULTS_FILE):
-        with open(RESULTS_FILE, "r") as f:
-            data = json.load(f)
-        return [r for r in data if r and "hourly_saving" in r]
-    return []
+# MongoDB connection
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
+db = client["cloudspend"]
+collection = db["scans"]
 
 def save_results(result):
     if result is None:
         print("--- No result to save, skipping ---")
         return
-    if os.path.exists(RESULTS_FILE):
-        with open(RESULTS_FILE, "r") as f:
-            existing = json.load(f)
-    else:
-        existing = []
-    existing.append(result)
-    with open(RESULTS_FILE, "w") as f:
-        json.dump(existing, f, indent=2)
+    collection.insert_one(result)
+    print(">>> Result saved to MongoDB")
+
+def load_results():
+    results = list(collection.find({}, {"_id": 0}))
+    return results
 
 def scheduled_job():
     print("\n>>> Scheduler triggered — running policy engine...")
     result = run_policy_engine()
     save_results(result)
-    print(">>> Result saved\n")
-
-# ── Endpoints ──────────────────────────────────────────
 
 @app.route("/api/results", methods=["GET"])
 def get_results():
@@ -58,15 +55,18 @@ def get_summary():
     results = load_results()
     if not results:
         return jsonify({"message": "No results yet"})
-    total_saved = sum(r["hourly_saving"] for r in results)
-    total_idle = sum(r["idle_count"] for r in results)
-    avg_saving = total_saved / len(results)
+    valid_results = [r for r in results if r and "hourly_saving" in r]
+    if not valid_results:
+        return jsonify({"message": "No valid results yet"})
+    total_saved = sum(r["hourly_saving"] for r in valid_results)
+    total_idle = sum(r["idle_count"] for r in valid_results)
+    avg_saving = total_saved / len(valid_results)
     return jsonify({
-        "total_runs": len(results),
+        "total_runs": len(valid_results),
         "total_hourly_saving": round(total_saved, 4),
         "total_idle_detected": total_idle,
         "avg_saving_per_run": round(avg_saving, 4),
-        "latest_timestamp": results[-1]["timestamp"]
+        "latest_timestamp": valid_results[-1]["timestamp"]
     })
 
 @app.route("/api/daily", methods=["GET"])
@@ -81,15 +81,9 @@ def get_monthly():
     results = load_results()
     grouped = {}
     for r in results:
-        month = r["timestamp"][:7]  # YYYY-MM
+        month = r["timestamp"][:7]
         if month not in grouped:
-            grouped[month] = {
-                "period": month,
-                "total_saving": 0,
-                "total_idle": 0,
-                "total_active": 0,
-                "runs": 0
-            }
+            grouped[month] = {"period": month, "total_saving": 0, "total_idle": 0, "total_active": 0, "runs": 0}
         grouped[month]["total_saving"] = round(grouped[month]["total_saving"] + r["hourly_saving"], 4)
         grouped[month]["total_idle"] += r["idle_count"]
         grouped[month]["total_active"] += r["active_count"]
@@ -101,15 +95,9 @@ def get_yearly():
     results = load_results()
     grouped = {}
     for r in results:
-        year = r["timestamp"][:4]  # YYYY
+        year = r["timestamp"][:4]
         if year not in grouped:
-            grouped[year] = {
-                "period": year,
-                "total_saving": 0,
-                "total_idle": 0,
-                "total_active": 0,
-                "runs": 0
-            }
+            grouped[year] = {"period": year, "total_saving": 0, "total_idle": 0, "total_active": 0, "runs": 0}
         grouped[year]["total_saving"] = round(grouped[year]["total_saving"] + r["hourly_saving"], 4)
         grouped[year]["total_idle"] += r["idle_count"]
         grouped[year]["total_active"] += r["active_count"]
@@ -121,4 +109,5 @@ if __name__ == "__main__":
     scheduler.add_job(scheduled_job, "interval", minutes=5)
     scheduler.start()
     print("--- Scheduler started — policy engine runs every 5 minutes ---")
+    print(f"--- Connected to MongoDB: {db.name} ---")
     app.run(debug=False)
